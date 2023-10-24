@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="circle">
+        </div>
+        <div class="navbar">
+            <img src="assets/logo.png" class="logo">
+            <nav>
+                <ul id="menuList">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">What's New</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <i class="fas fa-bars menu-icon" onclick="togglemenu()"></i>
+        </div>
+
+        <div class="content">
+            <div class="textbox">
+                <h2>It's not just Coffee<br>It's <span>Starbucks</span></h2>
+                <p>Startbucks Coffee is a global coffeehouse chain known for its premium coffee blends, inviting
+                    ambiance, and wide range of beverages. With a passion for crafting the perfect cup.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="imagebox">
+                <img src="assets/img1.png" alt="img" class="starbucks">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="assets/thumb1.png" onclick="imgslider('assets/img1.png');changecirclecolor('#017143')"></li>
+            <li><img src="assets/thumb2.png" onclick="imgslider('assets/img2.png');changecirclecolor('#eb7495')"></li>
+            <li><img src="assets/thumb3.png" onclick="imgslider('assets/img3.png');changecirclecolor('#d752b1')"></li>
+        </ul>
+
+        <ul class="sci">
+            <li><a href="https://rohan-samuel-portfolio.netlify.app" target="_blank"><i
+                        class="fas fa-address-book"></i></a></li>
+            <li><a href="mailto:rohansamuel134@gmail.com"
+                        target="_blank" style="border-right: none;"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/rohan-samuel-4a096a226" target="_blank"><i
+                        class="fab fa-linkedin margin"></i></a></li>
+            <li><a href="https://github.com/ROHANSAMUEL134" target="_blank"><i class="fab fa-github margin"></i></a></li>
+            
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function imgslider(anything) {
+            document.querySelector('.starbucks').src = anything;
+        }
+
+        function changecirclecolor(color) {
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+
+        var menuList = document.getElementById("menuList");
+        var menuHeight = "0px"; // Set initial maxHeight
+
+        menuList.style.maxHeight = menuHeight;
+
+        function togglemenu() {
+            if (menuHeight === "0px") {
+                menuHeight = "130px";
+            } else {
+                menuHeight = "0px";
+            }
+            menuList.style.maxHeight = menuHeight;
+        }
+
+            // document.addEventListener('contextmenu', function (e) {
+            //     e.preventDefault();
+            // });
+
+    </script>
+</body>
+
+</html>
